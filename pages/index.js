@@ -13,7 +13,7 @@ import postServices from '../services/post';
 import { getPosts, selectAllPosts } from '../slices/postSlice';
 import localStorageServices from '../helpers/local-storage-services';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const response = await postServices.getAllPost().then((value) => { return value.data })
   return {
     props: {
@@ -38,9 +38,9 @@ function Home({ response }) {
 
   useEffect(() => {
     if (JSON.stringify(Object.keys(allPostsData)) !== JSON.stringify(Object.keys(response))) {
-      dispatch(getPosts(response))
       // dispatch(PostMiddleWare())
     }
+    dispatch(getPosts(response))
     const user = localStorageServices.getValue()
     if (!user) {
       router.push("/login")
