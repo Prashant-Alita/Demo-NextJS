@@ -8,9 +8,12 @@ const getValue = () => {
 const setValue = (data) => {
     localStorage.setItem("user", JSON.stringify(data))
 }
+const removeItem = () => {
+    localStorage.removeItem("user")
+}
 
 const localStorageServices = {
-    getValue, setValue
+    getValue, setValue ,removeItem
 }
 
 export default localStorageServices;
