@@ -49,20 +49,25 @@ function Home({ response }) {
 
   
   return (
-    <Layout home>
+    <>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+        // <p>[Your Self Introduction]</p>
+        // <p>
+        //   (This is a sample website - you’ll be building a site like this on{' '}
+        //   <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        // </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <button onClick={() => router.push("/comments")}>Add post</button>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+       <div>
+        <h2 className={utilStyles.headingLg}>User Names</h2>
+          <button onClick={() => {
+            localStorageServices.removeItem()
+            router.push("/login")
+        }}>Log out</button>
+        </div>
         <ul className={utilStyles.list}>
           {allPostsData?.map((item) => (
             <li className={utilStyles.listItem} key={item.id}>
@@ -71,7 +76,7 @@ function Home({ response }) {
           ))}
         </ul>
       </section>
-    </Layout>
+    </>
   );
  }
 
