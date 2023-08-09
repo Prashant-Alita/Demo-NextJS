@@ -37,7 +37,7 @@ function Home({ response }) {
   // }, [])
 
   useEffect(() => {
-    if (!Object.keys(allPostsData).length > 0) {
+    if (JSON.stringify(Object.keys(allPostsData)) !== JSON.stringify(Object.keys(response))) {
       dispatch(getPosts(response))
       // dispatch(PostMiddleWare())
     }
