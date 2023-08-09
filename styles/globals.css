@@ -25,3 +25,14 @@ img {
   max-width: 100%;
   display: block;
 }
+div{
+  
+    display: flex;
+    align-items: center;
+
+}
+
+button{
+  position: absolute;
+  right: 0;
+}
