@@ -35,6 +35,7 @@ export async function getStaticProps(context) {
 function Post({ data }) {
     const {id,name} = data
     const [user, setUser] = useState({ name })
+    const router = useRouter()
     const updatedUser = useSelector(updatedPost)
     const dispatch = useDispatch()
     
@@ -51,6 +52,10 @@ function Post({ data }) {
     const submit = () => {
 
         dispatch(updateSingle(id,user))
+        setTimeout(() => {
+            
+            router.push("/")
+        }, 500);
     }
     return <>
         <Layout>
