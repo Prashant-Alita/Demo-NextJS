@@ -15,6 +15,7 @@ const addPost = () => {
 
     const submit = () => {
         postServices.addSingle(data)
+        router.push("/")
     }
     return <>
         <label>User name</label>
@@ -24,7 +25,7 @@ const addPost = () => {
         <input type="text" name="email" onChange={handleChange} value={data.email} />
 
         <button onClick={submit} className="btn">Submit</button>
-        <button onClick={()=>router.push("/")}>Back to home</button>
+        {/* <button onClick={()=>router.push("/")}>Back to home</button> */}
     </>
 }
 
