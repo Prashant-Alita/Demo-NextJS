@@ -17,6 +17,10 @@ const getSingle = (payload) => {
     return post(URL, payload);
 };
 
+const addSingle = (payload) => {
+    const URL = `${URI}`;
+    return post(URL, payload);
+};
 const updatePost = (id,payload) => {
     const URL = `${URI}/${id}`;
     return put(URL, payload);
@@ -32,6 +36,7 @@ getSingle,
 getAllPost,
 updatePost,
     deletePost,
-    getSinglePost
+    getSinglePost,
+    addSingle
 }
 export default postServices
