@@ -15,11 +15,14 @@ const addPost = () => {
 
     const submit = () => {
         postServices.addSingle(data)
-        router.push("/")
+        setTimeout(() => {
+            
+            router.push("/")
+        }, 500);
     }
     return <>
         <label>User name</label>
-        <input type="text" name="name" onChange={handleChange} value={data.name} />
+        <input type="text" name="name" onChange={handleChange} value={data.name} autoFocus/>
         
         <label>User email</label>
         <input type="text" name="email" onChange={handleChange} value={data.email} />
